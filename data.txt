@@ -1,0 +1,16 @@
+postgres password is postgres
+postgres db name is root
+
+
+
+THIS IS POSTRESQL DB CREDENTIALS
+postgreSQL username is root
+postgreSQL port number is 5432
+
+
+admin@medusajs.com
+supersecret
+
+
+command for run the db
+ psql -U postgres -h localhost -p 5432
