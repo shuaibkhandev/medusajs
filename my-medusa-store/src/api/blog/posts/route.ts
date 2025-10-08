@@ -1,23 +1,28 @@
-import type { 
-  MedusaRequest, 
+import {
+  MedusaRequest,
   MedusaResponse,
 } from "@medusajs/framework/http"
-import { 
-  createPostWorkflow,
-} from "../../../workflows/create-post"
+import { ProductModuleService } from "@medusajs/product"
 
 export async function POST(
-  req: MedusaRequest, 
-  res: MedusaResponse
-) {
-  const { result: post } = await createPostWorkflow(req.scope)
-    .run({
-      input: {
-        title: "My Post 2",
-      },
-    })
+  request: MedusaRequest,
+  response: MedusaResponse
+): Promise<void> {
+  const productModuleService: ProductModuleService =
+    request.scope.resolve("productModuleService")
 
-  res.json({
-    post,
-  })
+  const products = await productModuleService.createProducts([
+    {
+      title: "Medusa Shirt",
+      options: [{ title: "Color" }],
+      variants: [
+        {
+          title: "Black Shirt",
+          options: [{ value: "Black" }],
+        },
+      ],
+    },
+  ])
+
+  response.json({ success: true, products })
 }

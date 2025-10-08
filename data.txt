@@ -14,3 +14,8 @@ supersecret
 
 command for run the db
  psql -U postgres -h localhost -p 5432
+
+
+WOOCOMMERCE API KEY
+ consumerkey = ck_1c2996c0e10fc9218c7f530f2efd2a5bd74789b2
+ consumerSecret = cs_e39f084a4d3853356275dd545bbc90fa54133063
