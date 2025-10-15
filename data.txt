@@ -11,6 +11,9 @@ postgreSQL port number is 5432
 admin@medusajs.com
 supersecret
 
+newadmin@medusajs.com
+newsecret
+
 
 command for run the db
  psql -U postgres -h localhost -p 5432
